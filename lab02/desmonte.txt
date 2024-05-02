@@ -1,0 +1,123 @@
+
+lab02.x:	file format elf32-littleriscv
+
+Disassembly of section .text:
+
+000110b4 <_start>:
+   110b4: 37 05 04 00  	lui	a0, 64
+   110b8: 13 05 75 a7  	addi	a0, a0, -1417
+   110bc: 93 05 00 00  	li	a1, 0
+   110c0: 13 06 00 00  	li	a2, 0
+   110c4: 93 06 f0 ff  	li	a3, -1
+
+000110c8 <loop>:
+   110c8: 93 72 15 00  	andi	t0, a0, 1
+   110cc: b3 85 55 00  	add	a1, a1, t0
+   110d0: 33 46 56 00  	xor	a2, a2, t0
+   110d4: 93 86 16 00  	addi	a3, a3, 1
+   110d8: 13 55 15 00  	srli	a0, a0, 1
+   110dc: e3 16 05 fe  	bnez	a0, 0x110c8 <loop>
+
+000110e0 <end>:
+   110e0: 17 05 00 00  	auipc	a0, 0
+   110e4: 13 05 85 01  	addi	a0, a0, 24
+   110e8: 23 20 b5 00  	sw	a1, 0(a0)
+   110ec: 13 05 00 00  	li	a0, 0
+   110f0: 93 08 d0 05  	li	a7, 93
+   110f4: 73 00 00 00  	ecall	
+
+000110f8 <result>:
+   110f8: 00 00        	<unknown>
+   110fa: 00 00        	<unknown>
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+       0: 4c 69        	<unknown>
+       2: 6e 6b        	<unknown>
+       4: 65 72        	<unknown>
+       6: 3a 20        	<unknown>
+       8: 55 62        	<unknown>
+       a: 75 6e        	<unknown>
+       c: 74 75        	<unknown>
+       e: 20 4c        	<unknown>
+      10: 4c 44        	<unknown>
+      12: 20 31        	<unknown>
+      14: 35 2e        	<unknown>
+      16: 30 2e        	<unknown>
+      18: 37           	<unknown>
+      19: 00           	<unknown>
+
+Disassembly of section .symtab:
+
+00000000 <.symtab>:
+		...
+      10: 01 00        	<unknown>
+      12: 00 00        	<unknown>
+      14: c8 10        	<unknown>
+      16: 01 00        	<unknown>
+      18: 00 00        	<unknown>
+      1a: 00 00        	<unknown>
+      1c: 00 00        	<unknown>
+      1e: 01 00        	<unknown>
+      20: 06 00        	<unknown>
+      22: 00 00        	<unknown>
+      24: e0 10        	<unknown>
+      26: 01 00        	<unknown>
+      28: 00 00        	<unknown>
+      2a: 00 00        	<unknown>
+      2c: 00 00        	<unknown>
+      2e: 01 00        	<unknown>
+      30: 0a 00        	<unknown>
+      32: 00 00        	<unknown>
+      34: f8 10        	<unknown>
+      36: 01 00        	<unknown>
+      38: 00 00        	<unknown>
+      3a: 00 00        	<unknown>
+      3c: 00 00        	<unknown>
+      3e: 01 00        	<unknown>
+      40: 11 00        	<unknown>
+      42: 00 00        	<unknown>
+      44: b4 10        	<unknown>
+      46: 01 00        	<unknown>
+      48: 00 00        	<unknown>
+      4a: 00 00        	<unknown>
+      4c: 10 00        	<unknown>
+      4e: 01 00        	<unknown>
+
+Disassembly of section .shstrtab:
+
+00000000 <.shstrtab>:
+       0: 00 2e        	<unknown>
+       2: 74 65        	<unknown>
+       4: 78 74        	<unknown>
+       6: 00 2e        	<unknown>
+       8: 63 6f 6d 6d  	bltu	s10, s6, 0x6e6 <.symtab+0x6e6>
+       c: 65 6e        	<unknown>
+       e: 74 00        	<unknown>
+      10: 2e 73        	<unknown>
+      12: 79 6d        	<unknown>
+      14: 74 61        	<unknown>
+      16: 62 00        	<unknown>
+      18: 2e 73        	<unknown>
+      1a: 68 73        	<unknown>
+      1c: 74 72        	<unknown>
+      1e: 74 61        	<unknown>
+      20: 62 00        	<unknown>
+      22: 2e 73        	<unknown>
+      24: 74 72        	<unknown>
+      26: 74 61        	<unknown>
+      28: 62 00        	<unknown>
+
+Disassembly of section .strtab:
+
+00000000 <.strtab>:
+       0: 00 6c        	<unknown>
+       2: 6f 6f 70 00  	jal	t5, 0x6808 <.symtab+0x6808>
+       6: 65 6e        	<unknown>
+       8: 64 00        	<unknown>
+       a: 72 65        	<unknown>
+       c: 73 75 6c 74  	csrrci	a0, 1862, 24
+      10: 00 5f        	<unknown>
+      12: 73 74 61 72  	csrrci	s0, mhpmevent6h, 2
+      16: 74 00        	<unknown>
